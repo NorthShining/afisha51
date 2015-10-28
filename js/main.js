@@ -46,23 +46,48 @@ var getFilmsList = function (day) {
                 var filmRowImage = jQuery(this).find('img').attr("src");
                 jQuery(this).html('<img src="' + filmRowImage + '"></img>');
             });
-            $("div.list-date").html('<div class="list-date">' + mainApp.listGetFullDate[day].dateForPeople + '</div>');
+            $("div.list-date").html(mainApp.listGetFullDate[day].dateForPeople);
             filmsLinkToPopup();
             pageClear();
             window.scrollTo(0, 0);
             $(".loader-inner").fadeOut();
             $(".loader").delay(400).fadeOut("slow");
+            filmsCostParse();
         });
 };
 //--------------------------------------------------------------------------------------------
 
 //Очистка страницы от ненужного мусора
 var pageClear = function () {
-     $("a.filmCinema").each(function () {
+    $("a.filmCinema").each(function () {
         var cinemaLink = "http://vmurmanske.ru" + jQuery(this).attr("href");
         jQuery(this).attr("href", cinemaLink);
     });
-}
+    $("a.filmShowStatus").each(function () {
+        var cinemaTimeLink = "http://vmurmanske.ru" + jQuery(this).attr("href");
+        jQuery(this).attr("href", cinemaTimeLink);
+    });
+};
+//--------------------------------------------------------------------------------------------
+
+//Парсинг цен фильма
+var filmsCostParse = function () {
+    var prices = [];
+    $("span.film-price").each(function () {
+        var price = jQuery(this).text().split(' ');
+        prices.push(price[0]);
+    });
+    
+    var maxPrice = prices[0];
+    var minPrice = prices[0];
+    
+    prices.forEach(function(item){
+        if (item > maxPrice){maxPrice = item;}
+        if (item < minPrice){minPrice = item;}
+    });
+    console.log(maxPrice+" "+minPrice);
+};
+
 //--------------------------------------------------------------------------------------------
 
 //Описание фильма
@@ -70,7 +95,12 @@ var filmsLinkToPopup = function () {
     $("a.filmName").each(function () {
         linkToFilm = jQuery(this).attr('href');
         jQuery(this).removeAttr('href');
-        jQuery(this).parent().parent().parent().parent().attr('onClick', 'openFilmPopup("http://sokov.zz.mu/projects/HtmlGetter/getSiteHtml.php?siteUrl=http://vmurmanske.ru' + linkToFilm + '");');
+        if ($("div.list-date").text() === "Сейчас"){
+            jQuery(this).parent().parent().parent().parent().attr('onClick', 'openFilmPopup("http://sokov.zz.mu/projects/HtmlGetter/getSiteHtml.php?siteUrl=http://vmurmanske.ru' + linkToFilm + '");');
+        } else {
+            jQuery(this).parent().parent().parent().attr('onClick', 'openFilmPopup("http://sokov.zz.mu/projects/HtmlGetter/getSiteHtml.php?siteUrl=http://vmurmanske.ru' + linkToFilm + '");');
+        }
+        
     });
 
     $("div.filmIndex-filmImageWrapper3 a").each(function () {
@@ -93,13 +123,13 @@ var openFilmPopup = function (link) {
             $(".loader-inner").fadeOut();
             $(".loader").delay(400).fadeOut("slow");
         });
-}
+};
 
 var closeFilmPopup = function () {
     $("body").removeAttr("style");
     $(".film-popup").fadeOut(600);
     $(".film-popup-back").fadeOut(600);
-}
+};
 //--------------------------------------------------------------------------------------------
 
 //Создание дат на ближайшую неделю
@@ -132,12 +162,12 @@ var openNavPopupMenu = function () {
         $("div.nav-bottom-bar-button").removeClass("nav-bottom-bar-button-active");
     }
 
-}
+};
 
 var closeNavPopupMenu = function () {
     $("div.nav-popup-menu").fadeOut(1000);
     $("div.nav-bottom-bar-button").removeClass("nav-bottom-bar-button-active");
-}
+};
 
 var makeNavPopupMenu = function () {
     for (var i = 0; i <= mainApp.numOfListDays; i++) {
@@ -145,4 +175,3 @@ var makeNavPopupMenu = function () {
     }
 };
 //--------------------------------------------------------------------------------------------
-
