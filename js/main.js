@@ -29,9 +29,9 @@ var getFilmsList = function (day) {
     $(".loader").delay(400).fadeIn("slow");
     $("div.nav-bottom-bar-button").removeClass("nav-bottom-bar-button-active");
 
-    var getFilmsListLink = "http://sokov.zz.mu/projects/HtmlGetter/getSiteHtml.php?siteUrl=http://vmurmanske.ru/%D0%9A%D0%B8%D0%BD%D0%BE/%D0%A1%D0%B5%D0%B9%D1%87%D0%B0%D1%81  table.filmIndexTable";
+    var getFilmsListLink = "getSiteHtml.php?siteUrl=http://vmurmanske.ru/%D0%9A%D0%B8%D0%BD%D0%BE/%D0%A1%D0%B5%D0%B9%D1%87%D0%B0%D1%81  table.filmIndexTable";
     if (day != mainApp.numOfListDays + 1) {
-        getFilmsListLink = "http://sokov.zz.mu/projects/HtmlGetter/getSiteHtml.php?siteUrl=http://vmurmanske.ru/%D0%9A%D0%B8%D0%BD%D0%BE/" + mainApp.listGetFullDate[day].dateForGet +
+        getFilmsListLink = "getSiteHtml.php?siteUrl=http://vmurmanske.ru/%D0%9A%D0%B8%D0%BD%D0%BE/" + mainApp.listGetFullDate[day].dateForGet +
             " table.filmDateTable";
     };
     $("#content").load(getFilmsListLink,
@@ -96,9 +96,9 @@ var filmsLinkToPopup = function () {
         linkToFilm = jQuery(this).attr('href');
         jQuery(this).removeAttr('href');
         if ($("div.list-date").text() === "Сейчас"){
-            jQuery(this).parent().parent().parent().parent().attr('onClick', 'openFilmPopup("http://sokov.zz.mu/projects/HtmlGetter/getSiteHtml.php?siteUrl=http://vmurmanske.ru' + linkToFilm + '");');
+            jQuery(this).parent().parent().parent().parent().attr('onClick', 'openFilmPopup("getSiteHtml.php?siteUrl=http://vmurmanske.ru' + linkToFilm + '");');
         } else {
-            jQuery(this).parent().parent().parent().attr('onClick', 'openFilmPopup("http://sokov.zz.mu/projects/HtmlGetter/getSiteHtml.php?siteUrl=http://vmurmanske.ru' + linkToFilm + '");');
+            jQuery(this).parent().parent().parent().attr('onClick', 'openFilmPopup("getSiteHtml.php?siteUrl=http://vmurmanske.ru' + linkToFilm + '");');
         }
         
     });
