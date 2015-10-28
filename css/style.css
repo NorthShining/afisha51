@@ -1,0 +1,154 @@
+* {
+    padding: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-top: 0;
+    font-family: sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#content {
+    margin-top: 5%;
+}
+
+tr {
+    border-top: 1px solid #eaeaea;
+}
+
+tr:last-child {
+    border-bottom: 1px solid #eaeaea;
+}
+
+.filmDateTableFilmTimetableItem {
+    display: inline-block;
+}
+
+.film-genre {
+    color: dimgrey;
+    font-size: 10px;
+}
+
+tr {
+    height: auto;
+}
+
+table,
+tbody,
+tr {
+    width: 100%;
+}
+
+.filmDateTableFilmImage {
+    width: 58px;
+}
+
+.nav-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: bisque;
+    height: 50px;
+    z-index: 600;
+}
+
+.nav-bottom-bar-button {
+    height: 100%;
+    width: 23%;
+    font-size: 10px;
+    font-family: sans-serif;
+    display: inline-block;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.nav-bottom-bar-button:last-child {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-bottom-bar-button-active {
+    background-color: beige;
+}
+
+.loader {
+    background: none repeat scroll 0 0 #ffffff;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 500;
+    padding-bottom: 50px;
+}
+
+.loader .loader-inner {
+    background-image: url("../img/preloader.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #fff;
+    height: 60px;
+    width: 60px;
+    margin-top: -80px;
+    margin-left: -30px;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-popup-menu {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 200;
+    background-color: floralwhite;
+}
+
+.nav-popup-menu-button {
+    width: 100%;
+    padding: 5px 0 5px;
+    text-align: center;
+}
+
+.list-date {
+    width: 100%;
+    text-align: center;
+}
+
+.film-popup {
+    top: 30px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 700;
+    background-color: floralwhite;
+    overflow-y: scroll;
+}
+
+.film-popup-back {
+    height: 30px;
+    background-color: bisque;
+    text-align: center;
+    width: 100%;
+    top: 0;
+    position: fixed;
+}
