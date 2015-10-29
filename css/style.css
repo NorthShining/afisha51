@@ -12,14 +12,13 @@ body {
     height: 100%;
 }
 
-------Sidebar----------------------------------------------------------------------
-
 .sidebar {
     height: 100%;
-    width: 200px;
+    width: 300px;
     background-color: #ececec;
     display: inline-block;
     z-index: 1000;
+    position: fixed;
 }
 
 .sidebar-logo-wrapper {
@@ -73,9 +72,6 @@ body {
 .sidebar-nav-list-link-button-text {
 
 }
-
-
------------------------------------------------------------------------------------
 
 #content {
     margin-top: 5%;
