@@ -12,6 +12,71 @@ body {
     height: 100%;
 }
 
+------Sidebar----------------------------------------------------------------------
+
+.sidebar {
+    height: 100%;
+    width: 200px;
+    background-color: #ececec;
+    display: inline-block;
+    z-index: 1000;
+}
+
+.sidebar-logo-wrapper {
+
+}
+
+.sidebar-logo {
+
+}
+
+.sidebar-location-wrapper {
+
+}
+
+.sidebar-location {
+
+}
+
+.sidebar-location-icon {
+
+}
+
+.sidebar-location-text {
+
+}
+
+.sidebar-nav-wrapper {
+
+}
+
+.sidebar-nav {
+
+} 
+
+.sidebar-nav-list {
+
+}
+
+.sidebar-nav-list-link {
+
+}
+
+.sidebar-nav-list-link-button {
+
+}
+
+.sidebar-nav-list-link-button-icon {
+
+}
+
+.sidebar-nav-list-link-button-text {
+
+}
+
+
+-----------------------------------------------------------------------------------
+
 #content {
     margin-top: 5%;
 }
@@ -86,6 +151,7 @@ tr {
     width: 100%;
     z-index: 500;
     padding-bottom: 50px;
+    display: inline-block;
 }
 
 .loader .loader-inner {
