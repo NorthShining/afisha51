@@ -73,18 +73,37 @@ body {
 } 
 
 .sidebar-nav-button-wrapper {
-    padding: 10px 0 0 0;
+    padding: 15px 0 0 0;
 }
 
 .sidebar-nav-button {
     height: 30px; 
 }
 
-.sidebar-nav-button-icon {
-    height: 30px;
-    width: 30px;
-    display: inline-block;
-    background-size: contain; 
+.sidebar-nav-button-date {
+    height: 15px;
+    width: 20px;
+    position: absolute;
+    color: #a0a0a0;
+    text-align: center;
+    font-size: 12px;
+}
+
+#today-date-position {
+    top: 223px;
+    left: 42.5px;
+}
+
+#tomorrow-date-position {
+    top: 268px;
+    left: 42.5px;
+}
+
+.sidebar-nav-button-text {
+    height: 100%;
+    color: #a0a0a0;
+    line-height: 33px;
+    padding: 0 0 0 40px;
 }
 
 #now-icon {
@@ -105,13 +124,6 @@ body {
 #choose-date {
     background: url(../img/calendar-month.png) no-repeat left center;
     background-size: contain; 
-}
-
-.sidebar-nav-button-text {
-    height: 100%;
-    color: #a0a0a0;
-    line-height: 33px;
-    padding: 0 0 0 40px;
 }
 
 #content {
@@ -147,6 +159,30 @@ tr {
 
 .filmDateTableFilmImage {
     width: 58px;
+}
+
+.nav-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: bisque;
+    height: 50px;
+    z-index: 600;
+}
+
+.nav-bottom-bar-button {
+    height: 100%;
+    width: 23%;
+    font-size: 10px;
+    font-family: sans-serif;
+    display: inline-block;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.nav-bottom-bar-button:last-child {
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .nav-bottom-bar-button-active {
