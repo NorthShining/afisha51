@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Афиша51</title>
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,
 width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <link rel="stylesheet" href="css/style.css">
@@ -24,30 +24,31 @@ width=device-width, height=device-height, target-densitydpi=device-dpi" />
 		<div class="sidebar-divider"></div>
 		<div class="sidebar-nav-wrapper">
 			<div class="sidebar-nav">
-				<div class="sidebar-nav-button-wrapper">	
+				<div class="sidebar-nav-button-wrapper nav-bottom-bar-button-active" onClick="getFilmsList(mainApp.numOfListDays+1, jQuery(this));">	
 					<div class="sidebar-nav-button">
-						<div class="sidebar-nav-button-text" id="now-icon">Сейчас</div>
+						<div class="sidebar-nav-button-text" id="now-icon" >Сейчас</div>
 					</div>
 				</div>	
-				<div class="sidebar-nav-button-wrapper">	
+				<div class="sidebar-nav-button-wrapper" onClick="getFilmsList(0, jQuery(this));">
 					<div class="sidebar-nav-button">
 						<div class="sidebar-nav-button-date" id="today-date-position">7</div>
 						<div class="sidebar-nav-button-text" id="today-icon">Сегодня</div>
 					</div>
-				</div>	
-				<div class="sidebar-nav-button-wrapper">	
+					</div>
+				<div class="sidebar-nav-button-wrapper" onClick="getFilmsList(1, jQuery(this));">
 					<div class="sidebar-nav-button">
 						<div class="sidebar-nav-button-date" id="tomorrow-date-position">8</div>
 						<div class="sidebar-nav-button-text" id="tomorrow-icon">Завтра</div>
 					</div>
-				</div>	
-				<div class="sidebar-nav-button-wrapper">	
+				</div>
+				<div class="sidebar-nav-button-wrapper" onClick="openNavPopupMenu(jQuery(this));">	
 					<div class="sidebar-nav-button">
 						<div class="sidebar-nav-button-text" id="choose-date">Выбрать дату</div>
 					</div>
 				</div>	
 			</div>
 		</div>
+
 		<div class="sidebar-slider-wrapper">
 			<div class="sidebar-slider"></div>
 		</div>
@@ -56,15 +57,8 @@ width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <div class="loader-inner"></div>
     </div>
     <div class="list-date"></div>
-    <div class="nav-bottom-bar">
-        <div class="nav-bottom-bar-button nav-bottom-bar-button-active" onClick="getFilmsList(mainApp.numOfListDays+1); jQuery(this).addClass('nav-bottom-bar-button-active');">Сейчас</div>
-        <div class="nav-bottom-bar-button" onClick="getFilmsList(0); jQuery(this).addClass('nav-bottom-bar-button-active');">Сегодня</div>
-        <div class="nav-bottom-bar-button" onClick="getFilmsList(1); jQuery(this).addClass('nav-bottom-bar-button-active');">Завтра</div>
-        <div class="nav-bottom-bar-button" onClick="openNavPopupMenu(); jQuery(this).toggleClass('nav-bottom-bar-button-active');">…</div>
-    </div>
 
-    <div class="nav-popup-menu">
-    </div>
+    <div class="nav-popup-menu"></div>
 
     <div class="film-popup-back" onClick="closeFilmPopup();">Назад</div>
 

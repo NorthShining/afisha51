@@ -73,7 +73,7 @@ body {
 } 
 
 .sidebar-nav-button-wrapper {
-    padding: 10px 0 0 0;
+    padding: 15px 0 0 0;
 }
 
 .sidebar-nav-button {
@@ -90,12 +90,20 @@ body {
 }
 
 #today-date-position {
+<<<<<<< HEAD
     top: 213px;
+=======
+    top: 223px;
+>>>>>>> refs/remotes/origin/master
     left: 42.5px;
 }
 
 #tomorrow-date-position {
+<<<<<<< HEAD
     top: 253px;
+=======
+    top: 268px;
+>>>>>>> refs/remotes/origin/master
     left: 42.5px;
 }
 
@@ -186,7 +194,7 @@ tr {
 }
 
 .nav-bottom-bar-button-active {
-    background-color: beige;
+    border: 1px solid rgba(0,0,0,.1);
 }
 
 .loader {
