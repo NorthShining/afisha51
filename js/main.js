@@ -7,6 +7,7 @@ $(window).load(function() {
 var mainApp = {
     listGetFullDate: new Array,
     numOfListDays: 6,
+    preloaderDuration: 400,
     weekDays: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
     init: function() {
         openPreloader();
@@ -24,21 +25,21 @@ var mainApp = {
 //Прелоадер
 var openPreloader = function(callback) {
     $(".loader-inner").fadeIn();
-    $(".loader").delay(400).fadeIn("slow", callback);
+    $(".loader").fadeIn(mainApp.preloaderDuration, callback);
 };
 
 var closePreloader = function() {
     $(".loader-inner").fadeOut();
-    $(".loader").delay(400).fadeOut("slow");
+    $(".loader").fadeOut(mainApp.preloaderDuration);
 };
 //--------------------------------------------------------------------------------------------
 
 //Получить список фильмов
 var getFilmsList = function(day) {
     closeNavPopupMenu();
+    $(this).addClass("nav-bottom-bar-button-active");
+    $(this).siblings().removeClass("nav-bottom-bar-button-active");
     openPreloader(function() {
-        $("div.nav-bottom-bar-button").removeClass("nav-bottom-bar-button-active");
-
         var getFilmsListLink = "getSiteHtml.php?whatNeed=now&siteUrl=http://vmurmanske.ru/%D0%9A%D0%B8%D0%BD%D0%BE/%D0%A1%D0%B5%D0%B9%D1%87%D0%B0%D1%81  table.filmIndexTable";
         if (day != mainApp.numOfListDays + 1) {
             getFilmsListLink = "getSiteHtml.php?whatNeed=" + mainApp.listGetFullDate[day].dateForGet + "&siteUrl=http://vmurmanske.ru/%D0%9A%D0%B8%D0%BD%D0%BE/" + mainApp.listGetFullDate[day].dateForGet +
