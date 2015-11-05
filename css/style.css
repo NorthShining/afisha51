@@ -15,7 +15,7 @@ body {
 .sidebar {
     height: 100%;
     width: 70%;
-    max-width: 300px;
+    max-width: 250px;
     min-width: 200px;
     background-color: #ececec;
     display: inline-block;
@@ -54,20 +54,13 @@ body {
     margin: auto;
 }
 
-.sidebar-location-icon {
-    height: 100%;
-    width: 30px;
-    background: url(../img/location.png) no-repeat center;
-    background-size: contain; 
-    display: inline-block;
-}
-
 .sidebar-location-text {
     height: 100%;
-    width: 100px;
+    background: url(../img/location.png) no-repeat left center;
+    background-size: contain;
     color: #a0a0a0;
-    padding: 0 0 0 5px;
-    display: inline-block;
+    line-height: 30px;
+    padding: 0 0 0 40px; 
 }
 
 .sidebar-nav-wrapper {
@@ -97,31 +90,30 @@ body {
 }
 
 #now-icon {
-    background: url(../img/clock.png) no-repeat center;
+    background: url(../img/clock.png) no-repeat left center;
     background-size: contain; 
 }
 
 #today-icon {
-    background: url(../img/calendar-day.png) no-repeat center;
+    background: url(../img/calendar-day.png) no-repeat left center;
     background-size: contain; 
 }
 
 #tomorrow-icon {
-    background: url(../img/calendar-day.png) no-repeat center;
+    background: url(../img/calendar-day.png) no-repeat left center;
     background-size: contain; 
 }
 
 #choose-date {
-    background: url(../img/calendar-month.png) no-repeat center;
+    background: url(../img/calendar-month.png) no-repeat left center;
     background-size: contain; 
 }
 
 .sidebar-nav-button-text {
-    height: 30px;
-    width: 110px;
-    display: inline-block;
+    height: 100%;
     color: #a0a0a0;
-    padding: 0 0 0 5px;
+    line-height: 35px;
+    padding: 0 0 0 40px;
 }
 
 #content {
