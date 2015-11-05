@@ -51,6 +51,12 @@ var filmsListMake = function (day, link) {
                 var filmRowImage = jQuery(this).find('img').attr("src");
                 jQuery(this).html('<img src="' + filmRowImage + '"></img>');
             });
+            $(".filmIndexTable-film").each(function () {
+                var filmRowImage = jQuery(this).parent().addClass("film-container");
+            });
+            $(".filmDateTableFilmName").each(function () {
+                var filmRowImage = jQuery(this).parent().addClass("film-container");
+            });
             $("div.list-date").html(mainApp.listGetFullDate[day].dateForPeople);
             filmsLinkToPopup();
             pageClear();
