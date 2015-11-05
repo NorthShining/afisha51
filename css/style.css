@@ -161,31 +161,7 @@ tr {
     width: 58px;
 }
 
-.nav-bottom-bar {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: bisque;
-    height: 50px;
-    z-index: 600;
-}
-
-.nav-bottom-bar-button {
-    height: 100%;
-    width: 23%;
-    font-size: 10px;
-    font-family: sans-serif;
-    display: inline-block;
-    padding-top: 10px;
-    text-align: center;
-}
-
-.nav-bottom-bar-button:last-child {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.nav-bottom-bar-button-active {
+.side-bar-button-active {
     border: 1px solid rgba(0,0,0,.1);
 }
 

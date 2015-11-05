@@ -17,7 +17,7 @@ var mainApp = {
         makeWeekDates();
         makeNavPopupMenu();
         getFilmsList(mainApp.numOfListDays + 1, $('#now-icon'));
-        $(".sidebar-nav-button:first").addClass("nav-bottom-bar-button-active");
+        $(".sidebar-nav-button:first").addClass("side-bar-button-active");
     }
 };
 //--------------------------------------------------------------------------------------------
@@ -37,8 +37,8 @@ var closePreloader = function() {
 //Получить список фильмов
 var getFilmsList = function(day, that) {
     closeNavPopupMenu();
-    $(".nav-bottom-bar-button-active").removeClass("nav-bottom-bar-button-active");
-    that.find(".sidebar-nav-button").addClass("nav-bottom-bar-button-active");
+    $(".side-bar-button-active").removeClass("side-bar-button-active");
+    that.find(".sidebar-nav-button").addClass("side-bar-button-active");
     openPreloader(function() {
         var getFilmsListLink = "getSiteHtml.php?whatNeed=now&siteUrl=http://vmurmanske.ru/%D0%9A%D0%B8%D0%BD%D0%BE/%D0%A1%D0%B5%D0%B9%D1%87%D0%B0%D1%81  table.filmIndexTable";
         if (day != mainApp.numOfListDays + 1) {
@@ -187,15 +187,15 @@ var openNavPopupMenu = function(that) {
         closeNavPopupMenu();
     } else {
         $("div.nav-popup-menu").fadeIn(600);
-        $(".nav-bottom-bar-button-active").removeClass("nav-bottom-bar-button-active");
-        that.find(".sidebar-nav-button").addClass("nav-bottom-bar-button-active");
+        $(".side-bar-button-active").removeClass("side-bar-button-active");
+        that.find(".sidebar-nav-button").addClass("side-bar-button-active");
     }
 
 };
 
 var closeNavPopupMenu = function() {
     $("div.nav-popup-menu").fadeOut(600);
-    $("div.nav-bottom-bar-button").removeClass("nav-bottom-bar-button-active");
+    $("div.nav-bottom-bar-button").removeClass("side-bar-button-active");
 };
 
 var makeNavPopupMenu = function() {
