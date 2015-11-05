@@ -90,12 +90,20 @@ body {
 }
 
 #today-date-position {
+<<<<<<< HEAD
+    top: 213px;
+=======
     top: 223px;
+>>>>>>> refs/remotes/origin/master
     left: 42.5px;
 }
 
 #tomorrow-date-position {
+<<<<<<< HEAD
+    top: 253px;
+=======
     top: 268px;
+>>>>>>> refs/remotes/origin/master
     left: 42.5px;
 }
 
