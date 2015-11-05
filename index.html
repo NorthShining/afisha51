@@ -24,7 +24,7 @@ width=device-width, height=device-height, target-densitydpi=device-dpi" />
 		<div class="sidebar-divider"></div>
 		<div class="sidebar-nav-wrapper">
 			<div class="sidebar-nav">
-				<div class="sidebar-nav-button-wrapper" onClick="getFilmsList(mainApp.numOfListDays+1, jQuery(this));">	
+				<div class="sidebar-nav-button-wrapper nav-bottom-bar-button-active" onClick="getFilmsList(mainApp.numOfListDays+1, jQuery(this));">	
 					<div class="sidebar-nav-button">
 						<div class="sidebar-nav-button-text" id="now-icon" >Сейчас</div>
 					</div>
@@ -41,7 +41,7 @@ width=device-width, height=device-height, target-densitydpi=device-dpi" />
 						<div class="sidebar-nav-button-text" id="tomorrow-icon">Завтра</div>
 					</div>
 				</div>
-				<div class="sidebar-nav-button-wrapper" onClick="openNavPopupMenu();">	
+				<div class="sidebar-nav-button-wrapper" onClick="openNavPopupMenu(jQuery(this));">	
 					<div class="sidebar-nav-button">
 						<div class="sidebar-nav-button-text" id="choose-date">Выбрать дату</div>
 					</div>

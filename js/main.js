@@ -37,6 +37,8 @@ var closePreloader = function() {
 //Получить список фильмов
 var getFilmsList = function(day, that) {
     closeNavPopupMenu();
+    $(".nav-bottom-bar-button-active").removeClass("nav-bottom-bar-button-active");
+    that.find(".sidebar-nav-button").addClass("nav-bottom-bar-button-active");
     openPreloader(function() {
         var getFilmsListLink = "getSiteHtml.php?whatNeed=now&siteUrl=http://vmurmanske.ru/%D0%9A%D0%B8%D0%BD%D0%BE/%D0%A1%D0%B5%D0%B9%D1%87%D0%B0%D1%81  table.filmIndexTable";
         if (day != mainApp.numOfListDays + 1) {
@@ -180,12 +182,13 @@ var makeWeekDates = function() {
 //--------------------------------------------------------------------------------------------
 
 //Меню выбора даты сеанса
-var openNavPopupMenu = function() {
+var openNavPopupMenu = function(that) {
     if ($(".nav-popup-menu").attr("style") === "display: block;") {
         closeNavPopupMenu();
     } else {
         $("div.nav-popup-menu").fadeIn(600);
-        $("div.nav-bottom-bar-button").removeClass("nav-bottom-bar-button-active");
+        $(".nav-bottom-bar-button-active").removeClass("nav-bottom-bar-button-active");
+        that.find(".sidebar-nav-button").addClass("nav-bottom-bar-button-active");
     }
 
 };
