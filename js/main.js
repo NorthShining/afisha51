@@ -29,12 +29,17 @@ var getFilmsList = function (day) {
     $(".loader").delay(400).fadeIn("slow");
     $("div.nav-bottom-bar-button").removeClass("nav-bottom-bar-button-active");
 
-    var getFilmsListLink = "getSiteHtml.php?siteUrl=http://vmurmanske.ru/%D0%9A%D0%B8%D0%BD%D0%BE/%D0%A1%D0%B5%D0%B9%D1%87%D0%B0%D1%81  table.filmIndexTable";
+    var getFilmsListLink = "getSiteHtml.php?whatNeed=now&siteUrl=http://vmurmanske.ru/%D0%9A%D0%B8%D0%BD%D0%BE/%D0%A1%D0%B5%D0%B9%D1%87%D0%B0%D1%81  table.filmIndexTable";
     if (day != mainApp.numOfListDays + 1) {
-        getFilmsListLink = "getSiteHtml.php?siteUrl=http://vmurmanske.ru/%D0%9A%D0%B8%D0%BD%D0%BE/" + mainApp.listGetFullDate[day].dateForGet +
+        getFilmsListLink = "getSiteHtml.php?whatNeed="+ mainApp.listGetFullDate[day].dateForGet +"&siteUrl=http://vmurmanske.ru/%D0%9A%D0%B8%D0%BD%D0%BE/" + mainApp.listGetFullDate[day].dateForGet +
             " table.filmDateTable";
     };
-    $("#content").load(getFilmsListLink,
+    console.log(day);
+    filmsListMake(day, getFilmsListLink);
+};
+
+var filmsListMake = function (day, link) {
+    $("#content").load(link,
         function () {
             $("div.filmIndex-filmImageWrapperRounding").detach();
             $("td.filmDateTableVS").detach();
@@ -54,7 +59,7 @@ var getFilmsList = function (day) {
             $(".loader").delay(400).fadeOut("slow");
             filmsCostParse();
         });
-};
+}
 //--------------------------------------------------------------------------------------------
 
 //Очистка страницы от ненужного мусора
@@ -93,12 +98,14 @@ var filmsCostParse = function () {
 //Описание фильма
 var filmsLinkToPopup = function () {
     $("a.filmName").each(function () {
-        linkToFilm = jQuery(this).attr('href');
+        var linkToFilm = jQuery(this).attr('href');
+        var nameOfFilm = jQuery(this).text();
+        nameOfFilm = translite(nameOfFilm.replace(/ /g, ""));
         jQuery(this).removeAttr('href');
         if ($("div.list-date").text() === "Сейчас"){
-            jQuery(this).closest("div.filmIndexTable-film").attr('onClick', 'openFilmPopup("getSiteHtml.php?siteUrl=http://vmurmanske.ru' + linkToFilm + '");');
+            jQuery(this).closest("div.filmIndexTable-film").attr('onClick', 'openFilmPopup("getSiteHtml.php?whatNeed='+nameOfFilm+'&siteUrl=http://vmurmanske.ru' + linkToFilm + '");');
         } else {
-            jQuery(this).closest("tr").attr('onClick', 'openFilmPopup("getSiteHtml.php?siteUrl=http://vmurmanske.ru' + linkToFilm + '");');
+            jQuery(this).closest("tr").attr('onClick', 'openFilmPopup("getSiteHtml.php?whatNeed='+nameOfFilm+'&siteUrl=http://vmurmanske.ru' + linkToFilm + '");');
         }
         
     });
@@ -175,3 +182,10 @@ var makeNavPopupMenu = function () {
     }
 };
 //--------------------------------------------------------------------------------------------
+
+function translite(str){
+var arr={'а':'a', 'б':'b', 'в':'v', 'г':'g', 'д':'d', 'е':'e', 'ж':'g', 'з':'z', 'и':'i', 'й':'y', 'к':'k', 'л':'l', 'м':'m', 'н':'n', 'о':'o', 'п':'p', 'р':'r', 'с':'s', 'т':'t', 'у':'u', 'ф':'f', 'ы':'i', 'э':'e', 'А':'A', 'Б':'B', 'В':'V', 'Г':'G', 'Д':'D', 'Е':'E', 'Ж':'G', 'З':'Z', 'И':'I', 'Й':'Y', 'К':'K', 'Л':'L', 'М':'M', 'Н':'N', 'О':'O', 'П':'P', 'Р':'R', 'С':'S', 'Т':'T', 'У':'U', 'Ф':'F', 'Ы':'I', 'Э':'E', 'ё':'yo', 'х':'h', 'ц':'ts', 'ч':'ch', 'ш':'sh', 'щ':'shch', 'ъ':'', 'ь':'', 'ю':'yu', 'я':'ya', 'Ё':'YO', 'Х':'H', 'Ц':'TS', 'Ч':'CH', 'Ш':'SH', 'Щ':'SHCH', 'Ъ':'', 'Ь':'',
+'Ю':'YU', 'Я':'YA'};
+var replacer=function(a){return arr[a]||a};
+return str.replace(/[А-яёЁ]/g,replacer)
+}
