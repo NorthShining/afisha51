@@ -22,9 +22,9 @@ var mainApp = {
 //--------------------------------------------------------------------------------------------
 
 //Прелоадер
-var openPreloader = function() {
+var openPreloader = function(callback) {
     $(".loader-inner").fadeIn();
-    $(".loader").delay(400).fadeIn("slow");
+    $(".loader").delay(400).fadeIn("slow", callback);
 };
 
 var closePreloader = function() {
@@ -36,15 +36,17 @@ var closePreloader = function() {
 //Получить список фильмов
 var getFilmsList = function(day) {
     closeNavPopupMenu();
-    openPreloader();
-    $("div.nav-bottom-bar-button").removeClass("nav-bottom-bar-button-active");
+    openPreloader(function() {
+        $("div.nav-bottom-bar-button").removeClass("nav-bottom-bar-button-active");
 
-    var getFilmsListLink = "getSiteHtml.php?whatNeed=now&siteUrl=http://vmurmanske.ru/%D0%9A%D0%B8%D0%BD%D0%BE/%D0%A1%D0%B5%D0%B9%D1%87%D0%B0%D1%81  table.filmIndexTable";
-    if (day != mainApp.numOfListDays + 1) {
-        getFilmsListLink = "getSiteHtml.php?whatNeed=" + mainApp.listGetFullDate[day].dateForGet + "&siteUrl=http://vmurmanske.ru/%D0%9A%D0%B8%D0%BD%D0%BE/" + mainApp.listGetFullDate[day].dateForGet +
-            " table.filmDateTable";
-    };
-    filmsListMake(day, getFilmsListLink);
+        var getFilmsListLink = "getSiteHtml.php?whatNeed=now&siteUrl=http://vmurmanske.ru/%D0%9A%D0%B8%D0%BD%D0%BE/%D0%A1%D0%B5%D0%B9%D1%87%D0%B0%D1%81  table.filmIndexTable";
+        if (day != mainApp.numOfListDays + 1) {
+            getFilmsListLink = "getSiteHtml.php?whatNeed=" + mainApp.listGetFullDate[day].dateForGet + "&siteUrl=http://vmurmanske.ru/%D0%9A%D0%B8%D0%BD%D0%BE/" + mainApp.listGetFullDate[day].dateForGet +
+                " table.filmDateTable";
+        };
+        filmsListMake(day, getFilmsListLink);
+    });
+
 };
 
 var filmsListMake = function(day, link) {
@@ -134,18 +136,20 @@ var filmsLinkToPopup = function() {
 };
 
 var openFilmPopup = function(link) {
-    openPreloader();
-    $(".film-popup").load(link + " #filmline-center",
-        function() {
-            $("body").attr("style", "overflow:hidden;");
-            $("#info_pics").detach();
-            $(".film-popup p:first").detach();
-            $(".filmOptions").detach();
-            $(".film-popup").fadeIn(100);
-            $(".film-popup-back").fadeIn(100);
-            $(".film-popup").scrollTop(0);
-            closePreloader();
-        });
+    openPreloader(function() {
+        $(".film-popup").load(link + " #filmline-center",
+            function() {
+                $("body").attr("style", "overflow:hidden;");
+                $("#info_pics").detach();
+                $(".film-popup p:first").detach();
+                $(".filmOptions").detach();
+                $(".film-popup").fadeIn(100);
+                $(".film-popup-back").fadeIn(100);
+                $(".film-popup").scrollTop(0);
+                closePreloader();
+            });
+    });
+
 };
 
 var closeFilmPopup = function() {
