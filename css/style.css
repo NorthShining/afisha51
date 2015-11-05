@@ -12,70 +12,117 @@ body {
     height: 100%;
 }
 
-------Sidebar----------------------------------------------------------------------
-
 .sidebar {
     height: 100%;
-    width: 200px;
+    width: 70%;
+    max-width: 300px;
+    min-width: 200px;
     background-color: #ececec;
     display: inline-block;
     z-index: 1000;
+    position: fixed;
 }
 
 .sidebar-logo-wrapper {
-
+    width: 100%;
+    padding: 20px 0 0 0;
 }
 
 .sidebar-logo {
+    height: 50px; 
+    width: 150px;
+    background: url(../img/logo.png) no-repeat center;
+    background-size: contain; 
+    margin: auto;
+}
 
+.sidebar-divider {
+    height: 1px;
+    width: 150px;
+    background-color: #cccccc;
+    margin: auto;
 }
 
 .sidebar-location-wrapper {
-
+    width: 100%;
+    padding: 20px 0 20px 0;
 }
 
 .sidebar-location {
-
+    height: 30px;
+    width: 150px;
+    margin: auto;
 }
 
 .sidebar-location-icon {
-
+    height: 100%;
+    width: 30px;
+    background: url(../img/location.png) no-repeat center;
+    background-size: contain; 
+    display: inline-block;
 }
 
 .sidebar-location-text {
-
+    height: 100%;
+    width: 100px;
+    color: #a0a0a0;
+    padding: 0 0 0 5px;
+    display: inline-block;
 }
 
 .sidebar-nav-wrapper {
-
+    width: 100%;
+    padding: 10px 0 0 0;
 }
 
 .sidebar-nav {
-
+    height: auto;
+    width: 150px;
+    margin: auto;    
 } 
 
-.sidebar-nav-list {
-
+.sidebar-nav-button-wrapper {
+    padding: 10px 0 0 0;
 }
 
-.sidebar-nav-list-link {
-
+.sidebar-nav-button {
+    height: 30px; 
 }
 
-.sidebar-nav-list-link-button {
-
+.sidebar-nav-button-icon {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    background-size: contain; 
 }
 
-.sidebar-nav-list-link-button-icon {
-
+#now-icon {
+    background: url(../img/clock.png) no-repeat center;
+    background-size: contain; 
 }
 
-.sidebar-nav-list-link-button-text {
-
+#today-icon {
+    background: url(../img/calendar-day.png) no-repeat center;
+    background-size: contain; 
 }
 
+#tomorrow-icon {
+    background: url(../img/calendar-day.png) no-repeat center;
+    background-size: contain; 
+}
 
------------------------------------------------------------------------------------
+#choose-date {
+    background: url(../img/calendar-month.png) no-repeat center;
+    background-size: contain; 
+}
+
+.sidebar-nav-button-text {
+    height: 30px;
+    width: 110px;
+    display: inline-block;
+    color: #a0a0a0;
+    padding: 0 0 0 5px;
+}
 
 #content {
     margin-top: 5%;
