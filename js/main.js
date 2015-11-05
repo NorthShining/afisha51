@@ -17,7 +17,7 @@ var mainApp = {
         makeWeekDates();
         makeNavPopupMenu();
         getFilmsList(mainApp.numOfListDays + 1, $('#now-icon'));
-        $("div.nav-bottom-bar-button:first").addClass("nav-bottom-bar-button-active");
+        $(".sidebar-nav-button:first").addClass("nav-bottom-bar-button-active");
     }
 };
 //--------------------------------------------------------------------------------------------
