@@ -14,9 +14,7 @@ body {
 
 .sidebar {
     height: 100%;
-    width: 70%;
-    max-width: 250px;
-    min-width: 200px;
+    width: 225px;
     background-color: #ececec;
     display: inline-block;
     z-index: 1000;
@@ -112,7 +110,7 @@ body {
 .sidebar-nav-button-text {
     height: 100%;
     color: #a0a0a0;
-    line-height: 35px;
+    line-height: 33px;
     padding: 0 0 0 40px;
 }
 
