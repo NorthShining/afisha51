@@ -24,28 +24,31 @@ width=device-width, height=device-height, target-densitydpi=device-dpi" />
 		<div class="sidebar-divider"></div>
 		<div class="sidebar-nav-wrapper">
 			<div class="sidebar-nav">
-				<div class="sidebar-nav-button-wrapper">	
+				<div class="sidebar-nav-button-wrapper" onClick="getFilmsList(mainApp.numOfListDays+1, jQuery(this));">	
 					<div class="sidebar-nav-button">
-						<div class="sidebar-nav-button-text" id="now-icon" onClick="getFilmsList(mainApp.numOfListDays+1, jQuery(this));">Сейчас</div>
+						<div class="sidebar-nav-button-text" id="now-icon" >Сейчас</div>
 					</div>
 				</div>	
-				<div class="sidebar-nav-button-wrapper">	
+				<div class="sidebar-nav-button-wrapper" onClick="getFilmsList(0, jQuery(this));">
 					<div class="sidebar-nav-button">
-						<div class="sidebar-nav-button-text" id="today-icon" onClick="getFilmsList(0, jQuery(this));">Сегодня</div>
+						<div class="sidebar-nav-button-date" id="today-date-position">7</div>
+						<div class="sidebar-nav-button-text" id="today-icon">Сегодня</div>
 					</div>
-				</div>	
-				<div class="sidebar-nav-button-wrapper">	
-					<div class="sidebar-nav-button">
-						<div class="sidebar-nav-button-text" id="tomorrow-icon" onClick="getFilmsList(1, jQuery(this));">Завтра</div>
 					</div>
-				</div>	
-				<div class="sidebar-nav-button-wrapper">	
+				<div class="sidebar-nav-button-wrapper" onClick="getFilmsList(1, jQuery(this));">
 					<div class="sidebar-nav-button">
-						<div class="sidebar-nav-button-text" id="choose-date" onClick="openNavPopupMenu();">Выбрать дату</div>
+						<div class="sidebar-nav-button-date" id="tomorrow-date-position">8</div>
+						<div class="sidebar-nav-button-text" id="tomorrow-icon">Завтра</div>
+					</div>
+				</div>
+				<div class="sidebar-nav-button-wrapper" onClick="openNavPopupMenu();">	
+					<div class="sidebar-nav-button">
+						<div class="sidebar-nav-button-text" id="choose-date">Выбрать дату</div>
 					</div>
 				</div>	
 			</div>
 		</div>
+
 		<div class="sidebar-slider-wrapper">
 			<div class="sidebar-slider"></div>
 		</div>

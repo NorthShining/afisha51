@@ -37,8 +37,6 @@ var closePreloader = function() {
 //Получить список фильмов
 var getFilmsList = function(day, that) {
     closeNavPopupMenu();
-    that.addClass("nav-bottom-bar-button-active");
-    that.siblings().removeClass("nav-bottom-bar-button-active");
     openPreloader(function() {
         var getFilmsListLink = "getSiteHtml.php?whatNeed=now&siteUrl=http://vmurmanske.ru/%D0%9A%D0%B8%D0%BD%D0%BE/%D0%A1%D0%B5%D0%B9%D1%87%D0%B0%D1%81  table.filmIndexTable";
         if (day != mainApp.numOfListDays + 1) {
