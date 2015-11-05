@@ -2,7 +2,7 @@ $(window).load(function() {
     mainApp.init();
 });
 
-
+//Moy huy
 //Основной объект - приложение
 var mainApp = {
     listGetFullDate: new Array,
