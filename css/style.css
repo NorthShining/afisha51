@@ -80,11 +80,30 @@ body {
     height: 30px; 
 }
 
-.sidebar-nav-button-icon {
-    height: 30px;
-    width: 30px;
-    display: inline-block;
-    background-size: contain; 
+.sidebar-nav-button-date {
+    height: 15px;
+    width: 20px;
+    position: absolute;
+    color: #a0a0a0;
+    text-align: center;
+    font-size: 12px;
+}
+
+#today-date-position {
+    top: 213px;
+    left: 42.5px;
+}
+
+#tomorrow-date-position {
+    top: 253px;
+    left: 42.5px;
+}
+
+.sidebar-nav-button-text {
+    height: 100%;
+    color: #a0a0a0;
+    line-height: 33px;
+    padding: 0 0 0 40px;
 }
 
 #now-icon {
@@ -105,13 +124,6 @@ body {
 #choose-date {
     background: url(../img/calendar-month.png) no-repeat left center;
     background-size: contain; 
-}
-
-.sidebar-nav-button-text {
-    height: 100%;
-    color: #a0a0a0;
-    line-height: 33px;
-    padding: 0 0 0 40px;
 }
 
 #content {
