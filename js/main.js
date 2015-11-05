@@ -96,9 +96,9 @@ var filmsLinkToPopup = function () {
         linkToFilm = jQuery(this).attr('href');
         jQuery(this).removeAttr('href');
         if ($("div.list-date").text() === "Сейчас"){
-            jQuery(this).parent().parent().parent().parent().attr('onClick', 'openFilmPopup("getSiteHtml.php?siteUrl=http://vmurmanske.ru' + linkToFilm + '");');
+            jQuery(this).closest("div.filmIndexTable-film").attr('onClick', 'openFilmPopup("getSiteHtml.php?siteUrl=http://vmurmanske.ru' + linkToFilm + '");');
         } else {
-            jQuery(this).parent().parent().parent().attr('onClick', 'openFilmPopup("getSiteHtml.php?siteUrl=http://vmurmanske.ru' + linkToFilm + '");');
+            jQuery(this).closest("tr").attr('onClick', 'openFilmPopup("getSiteHtml.php?siteUrl=http://vmurmanske.ru' + linkToFilm + '");');
         }
         
     });
