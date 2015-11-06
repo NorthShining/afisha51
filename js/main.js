@@ -247,7 +247,7 @@ var closeNavPopupMenu = function() {
 
 var makeNavPopupMenu = function() {
     for (var i = 0; i <= mainApp.numOfListDays; i++) {
-        $("div.nav-popup-menu").append('<div class="nav-popup-menu-button" onClick="getFilmsList(' + i + ','$(".emptyClass")'); closeNavPopupMenu();">' + mainApp.listGetFullDate[i].dateForPeople + '</div>');
+        $("div.nav-popup-menu").append('<div class="nav-popup-menu-button" onClick="getFilmsList('+ i +'); closeNavPopupMenu();">' + mainApp.listGetFullDate[i].dateForPeople + '</div>');
     }
 };
 //--------------------------------------------------------------------------------------------
