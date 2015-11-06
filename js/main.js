@@ -190,7 +190,7 @@ var openFilmPopup = function(link) {
 var closeFilmPopup = function() {
     $("body").removeAttr("style");
     $(".film-popup").fadeOut(mainApp.animateDuration);
-    $(".film-popup-back").fadeOut(mainApp.animateDuration);
+    $(".popup-back").fadeOut(mainApp.animateDuration);
 };
 //--------------------------------------------------------------------------------------------
 
@@ -238,7 +238,7 @@ var openNavPopupMenu = function(that) {
 
 var closeNavPopupMenu = function() {
     $("div.nav-popup-menu").fadeOut(mainApp.animateDuration);
-    $(".film-popup-back").fadeOut(mainApp.animateDuration);
+    $(".popup-back").fadeOut(mainApp.animateDuration);
     $(".side-bar-button-active").removeClass("side-bar-button-active");
 };
 
