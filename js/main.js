@@ -238,6 +238,7 @@ var openNavPopupMenu = function(that) {
 
 var closeNavPopupMenu = function() {
     $("div.nav-popup-menu").fadeOut(mainApp.animateDuration);
+    $(".film-popup-back").fadeOut(mainApp.animateDuration);
     $(".side-bar-button-active").removeClass("side-bar-button-active");
 };
 
