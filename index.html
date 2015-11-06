@@ -52,37 +52,40 @@ width=device-width, height=device-height, target-densitydpi=device-dpi" />
 			<div class="sidebar-slider"></div>
 		</div>
 	</div>
-	<div class="header">
-		<div class="header-nav">
-			<div class="header-nav-menu">
-				<div class="header-nav-menu-button-wrapper">
-					<div class="header-nav-menu-button">
-						<div class="header-nav-menu-button-icon"></div>
-						<div class="header-nav-menu-button-icon"></div>
-						<div class="header-nav-menu-button-icon"></div>
+
+	<div class="main-page-wrapper">
+		<div class="header">
+			<div class="header-nav">
+				<div class="header-nav-menu" onclick="openSidebar();">
+					<div class="header-nav-menu-button-wrapper">
+						<div class="header-nav-menu-button">
+							<div class="header-nav-menu-button-icon"></div>
+							<div class="header-nav-menu-button-icon"></div>
+							<div class="header-nav-menu-button-icon"></div>
+						</div>
 					</div>
 				</div>
+				<div class="header-nav-divider"></div>
+				<div class="header-nav-name">Сейчас</div>
+				<div class="header-nav-button"></div>
 			</div>
-			<div class="header-nav-divider"></div>
-			<div class="header-nav-name">Сейчас</div>
-			<div class="header-nav-button"></div>
 		</div>
+	    <div class="loader">
+	        <div class="loader-inner"></div>
+	    </div>
+
+		<div class="popup-back" onClick="closePopup();">Назад</div>
+
+	    <div class="nav-popup-menu"></div>
+
+	    <div class="film-popup"></div>
+
+	    <div id="content"></div>	
 	</div>
-    <div class="loader">
-        <div class="loader-inner"></div>
-    </div>
-    <div class="list-date"></div>
-
-    <div class="nav-popup-menu"></div>
-
-    <div class="film-popup-back" onClick="closeFilmPopup();">Назад</div>
-
-    <div class="film-popup"></div>
-
-    <div id="content"></div>
+	
 
     <script type="text/javascript" src="libs/jquery-2.1.4.min.js"></script>
-    <script src='http://code.jquery.com/mobile/1.4.0-beta.1/jquery.mobile-1.4.0-beta.1.min.js'></script>
+    <!-- <script src='http://code.jquery.com/mobile/1.4.0-beta.1/jquery.mobile-1.4.0-beta.1.min.js'></script> -->
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 
