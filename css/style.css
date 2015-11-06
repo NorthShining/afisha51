@@ -23,12 +23,12 @@ body {
 
 .sidebar-logo-wrapper {
     width: 100%;
-    padding: 20px 0 0 20px;
+    padding: 15px 0 0 20px;
 }
 
 .sidebar-logo {
-    height: 50px; 
-    width: 150px;
+    height: 40px; 
+    width: 140px;
     background: url(../img/logo.png) no-repeat center;
     background-size: contain; 
     margin: 0;
@@ -86,12 +86,12 @@ body {
 }
 
 #today-date-position {
-    top: 253px;
+    top: 238px;
     left: 24.5px;
 }
 
 #tomorrow-date-position {
-    top: 303px;
+    top: 288px;
     left: 24.5px; 
 }
  
@@ -120,6 +120,64 @@ body {
 #choose-date {
     background: url(../img/calendar-month.png) no-repeat left center;
     background-size: contain; 
+}
+
+.header {
+    height: 55px;
+    background-color: #464646;
+}
+
+.header-nav {
+    height: 100%;
+    padding-left: 225px;
+}
+
+.header-nav-menu {
+    height: 100%;
+    width: 55px;
+    display: inline-block;
+}
+
+.header-nav-menu-button-wrapper {
+    height: 20px;
+    padding: 17px 0 0 0;
+}
+
+.header-nav-menu-button {
+    width: 20px;
+    margin: auto;
+}
+
+.header-nav-menu-button-icon {
+    height: 4px;
+    background-color: #fff;
+    border-radius: 1px;
+}
+
+.header-nav-menu-button-icon:nth-child(2) {
+    margin-top: 4px;
+}
+
+.header-nav-menu-button-icon:nth-child(3) {
+    margin-top: 4px;
+}
+
+.header-nav-divider {
+    height: 100%;
+    width: 1px;
+    background-color: #a0a0a0;
+    display: inline-block;
+}
+
+.header-nav-name {
+    height: 100%;
+    color: #fff;
+    line-height: 10px;
+    display: inline-block;
+}
+
+.header-nav-button {
+    display: inline-block;
 }
 
 #content {
