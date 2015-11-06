@@ -6,7 +6,7 @@ $(window).load(function() {
 //Основной объект - приложение
 var mainApp = {
     listGetFullDate: new Array,
-    numOfListDays: 6,
+    numOfListDays: 5,
     animateDuration: 400,
     previousName: "Сегодня",
     weekDays: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
@@ -25,6 +25,9 @@ var mainApp = {
 
 //Получить список фильмов
 var getFilmsList = function(day, that) {
+    if (!that){
+        that = $(".nav-popup-menu-button");
+    }
     closeSidebar();
     closeNavPopupMenu();
     $(".side-bar-button-active").removeClass("side-bar-button-active");
