@@ -15,7 +15,7 @@ body {
 .sidebar {
     height: 100%;
     width: 225px;
-    background-color: #ececec;
+    background-color: #f0f0f0;
     display: inline-block;
     z-index: 1000;
     position: fixed;
@@ -23,7 +23,7 @@ body {
 
 .sidebar-logo-wrapper {
     width: 100%;
-    padding: 20px 0 0 0;
+    padding: 20px 0 0 20px;
 }
 
 .sidebar-logo {
@@ -31,25 +31,23 @@ body {
     width: 150px;
     background: url(../img/logo.png) no-repeat center;
     background-size: contain; 
-    margin: auto;
+    margin: 0;
 }
 
 .sidebar-divider {
     height: 1px;
-    width: 150px;
     background-color: #cccccc;
     margin: auto;
 }
 
 .sidebar-location-wrapper {
-    width: 100%;
-    padding: 20px 0 20px 0;
+    padding: 30px 0 30px 20px;
 }
 
 .sidebar-location {
     height: 30px;
     width: 150px;
-    margin: auto;
+    margin: 0;
 }
 
 .sidebar-location-text {
@@ -58,22 +56,20 @@ body {
     background-size: contain;
     color: #a0a0a0;
     line-height: 30px;
-    padding: 0 0 0 40px; 
+    padding: 0 0 0 50px; 
 }
 
 .sidebar-nav-wrapper {
-    width: 100%;
-    padding: 10px 0 0 0;
+    padding: 10px 0 0 20px;
 }
 
 .sidebar-nav {
     height: auto;
-    width: 150px;
-    margin: auto;    
+    margin: 0;    
 } 
 
 .sidebar-nav-button-wrapper {
-    padding: 15px 0 0 0;
+    padding: 20px 0 0 0;
 }
 
 .sidebar-nav-button {
@@ -90,20 +86,20 @@ body {
 }
 
 #today-date-position {
-    top: 223px;
-    left: 42.5px;
+    top: 253px;
+    left: 24.5px;
 }
 
 #tomorrow-date-position {
-    top: 268px;
-    left: 42.5px;
+    top: 303px;
+    left: 24.5px; 
 }
-
+ 
 .sidebar-nav-button-text {
     height: 100%;
     color: #a0a0a0;
     line-height: 33px;
-    padding: 0 0 0 40px;
+    padding: 0 0 0 50px;
 }
 
 #now-icon {
@@ -161,8 +157,32 @@ tr {
     width: 58px;
 }
 
-.side-bar-button-active {
-    border: 1px solid rgba(0,0,0,.1);
+.nav-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: bisque;
+    height: 50px;
+    z-index: 600;
+}
+
+.nav-bottom-bar-button {
+    height: 100%;
+    width: 23%;
+    font-size: 10px;
+    font-family: sans-serif;
+    display: inline-block;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.nav-bottom-bar-button:last-child {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-bottom-bar-button-active {
+    background-color: beige;
 }
 
 .loader {
