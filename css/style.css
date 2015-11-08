@@ -170,10 +170,11 @@ body {
 }
 
 .header-nav-name {
-    height: 100%;
     color: #fff;
-    line-height: 10px;
     display: inline-block;
+    position: relative;
+    top: -22px;
+    padding: 0 0 0 15px;
 }
 
 .header-nav-button {
