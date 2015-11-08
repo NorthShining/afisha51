@@ -6,14 +6,15 @@ $(window).load(function() {
 //Основной объект - приложение
 var mainApp = {
     listGetFullDate: new Array,
-    numOfListDays: 6,
-    preloaderDuration: 400,
+    numOfListDays: 5,
+    animateDuration: 400,
+    previousName: "Сегодня",
     weekDays: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
     init: function() {
         openPreloader();
         $("div.nav-popup-menu").fadeOut("fast");
         $("div.film-popup").fadeOut("fast");
-        $("div.film-popup-back").fadeOut("fast");
+        $("div.popup-back").fadeOut("fast");
         makeWeekDates();
         makeNavPopupMenu();
         getFilmsList(mainApp.numOfListDays + 1, $('#now-icon'));
@@ -22,20 +23,12 @@ var mainApp = {
 };
 //--------------------------------------------------------------------------------------------
 
-//Прелоадер
-var openPreloader = function(callback) {
-    $(".loader-inner").fadeIn();
-    $(".loader").fadeIn(mainApp.preloaderDuration, callback);
-};
-
-var closePreloader = function() {
-    $(".loader-inner").fadeOut();
-    $(".loader").fadeOut(mainApp.preloaderDuration);
-};
-//--------------------------------------------------------------------------------------------
-
 //Получить список фильмов
 var getFilmsList = function(day, that) {
+    if (!that){
+        that = $(".nav-popup-menu-button");
+    }
+    closeSidebar();
     closeNavPopupMenu();
     $(".side-bar-button-active").removeClass("side-bar-button-active");
     that.find(".sidebar-nav-button").addClass("side-bar-button-active");
@@ -69,13 +62,54 @@ var filmsListMake = function(day, link) {
             $(".filmDateTableFilmName").each(function() {
                 var filmRowImage = jQuery(this).parent().addClass("film-container");
             });
-            $("div.list-date").html(mainApp.listGetFullDate[day].dateForPeople);
+            $("div.header-nav-name").html(mainApp.listGetFullDate[day].dateForPeople);
             filmsLinkToPopup();
             pageClear();
             window.scrollTo(0, 0);
             closePreloader();
             filmsCostParse();
         });
+};
+//--------------------------------------------------------------------------------------------
+
+//Прелоадер
+var openPreloader = function(callback) {
+    $(".loader-inner").fadeIn();
+    $(".loader").fadeIn(mainApp.animateDuration, callback);
+};
+
+var closePreloader = function() {
+    $(".loader-inner").fadeOut();
+    $(".loader").fadeOut(mainApp.animateDuration);
+};
+//--------------------------------------------------------------------------------------------
+
+//Сайдбар
+var openSidebar = function() {
+    if ($(".sidebar").hasClass("openedSidebar")) {
+        closeSidebar();
+    } else {
+        $(".sidebar").animate({
+            left: "+=230"
+        }, mainApp.animateDuration, 'easeInOutSine');
+        $(".main-page-wrapper").animate({
+            "margin-left": "+=225"
+        }, mainApp.animateDuration, 'easeInOutSine');
+        $(".sidebar").addClass("openedSidebar");
+    }
+
+};
+
+var closeSidebar = function() {
+    if ($(".sidebar").hasClass("openedSidebar")) {
+        $(".sidebar").animate({
+            left: "-=230"
+        }, mainApp.animateDuration, 'easeInOutSine');
+        $(".main-page-wrapper").animate({
+            "margin-left": "-=225"
+        }, mainApp.animateDuration, 'easeInOutSine');
+        $(".sidebar").removeClass("openedSidebar");
+    }
 };
 //--------------------------------------------------------------------------------------------
 
@@ -142,10 +176,13 @@ var openFilmPopup = function(link) {
             function() {
                 $("body").attr("style", "overflow:hidden;");
                 $("#info_pics").detach();
+                mainApp.previousName = $(".header-nav-name").html();
+                $(".header-nav-name").html($(".filmSingle").html());
                 $(".film-popup p:first").detach();
+                $(".filmSingle").detach();
                 $(".filmOptions").detach();
                 $(".film-popup").fadeIn(100);
-                $(".film-popup-back").fadeIn(100);
+                $(".popup-back").fadeIn(100);
                 $(".film-popup").scrollTop(0);
                 closePreloader();
             });
@@ -155,8 +192,8 @@ var openFilmPopup = function(link) {
 
 var closeFilmPopup = function() {
     $("body").removeAttr("style");
-    $(".film-popup").fadeOut(600);
-    $(".film-popup-back").fadeOut(600);
+    $(".film-popup").fadeOut(mainApp.animateDuration);
+    $(".popup-back").fadeOut(mainApp.animateDuration);
 };
 //--------------------------------------------------------------------------------------------
 
@@ -185,23 +222,41 @@ var makeWeekDates = function() {
 var openNavPopupMenu = function(that) {
     if ($(".nav-popup-menu").attr("style") === "display: block;") {
         closeNavPopupMenu();
-    } else {
-        $("div.nav-popup-menu").fadeIn(600);
         $(".side-bar-button-active").removeClass("side-bar-button-active");
-        that.find(".sidebar-nav-button").addClass("side-bar-button-active");
+    } else {
+        openPreloader(function() {
+            $(".popup-back").fadeIn(100);
+            mainApp.previousName = $(".header-nav-name").html();
+            $(".header-nav-name").html("Выбор даты");
+            $("div.nav-popup-menu").fadeIn(mainApp.animateDuration);
+            $(".side-bar-button-active").removeClass("side-bar-button-active");
+            that.find(".sidebar-nav-button").addClass("side-bar-button-active");
+            closeSidebar();
+            closePreloader();
+        });
+
     }
 
 };
 
 var closeNavPopupMenu = function() {
-    $("div.nav-popup-menu").fadeOut(600);
-    $("div.nav-bottom-bar-button").removeClass("side-bar-button-active");
+    $("div.nav-popup-menu").fadeOut(mainApp.animateDuration);
+    $(".popup-back").fadeOut(mainApp.animateDuration);
+    $(".side-bar-button-active").removeClass("side-bar-button-active");
 };
 
 var makeNavPopupMenu = function() {
     for (var i = 0; i <= mainApp.numOfListDays; i++) {
-        $("div.nav-popup-menu").append('<div class="nav-popup-menu-button" onClick="getFilmsList(' + i + '); closeNavPopupMenu();">' + mainApp.listGetFullDate[i].dateForPeople + '</div>');
+        $("div.nav-popup-menu").append('<div class="nav-popup-menu-button" onClick="getFilmsList('+ i +'); closeNavPopupMenu();">' + mainApp.listGetFullDate[i].dateForPeople + '</div>');
     }
+};
+//--------------------------------------------------------------------------------------------
+
+//Меню выбора даты сеанса
+var closePopup = function() {
+    $(".header-nav-name").html(mainApp.previousName);
+    closeFilmPopup();
+    closeNavPopupMenu();
 };
 //--------------------------------------------------------------------------------------------
 
