@@ -30,6 +30,7 @@ var getFilmsList = function(day, that) {
     }
     closeSidebar();
     closeNavPopupMenu();
+    closeFilmPopup();
     $(".side-bar-button-active").removeClass("side-bar-button-active");
     that.find(".sidebar-nav-button").addClass("side-bar-button-active");
     openPreloader(function() {
