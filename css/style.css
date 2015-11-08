@@ -215,8 +215,8 @@ tr {
     width: 58px;
 }
 
-.nav-bottom-bar-button-active {
-    color: rgba(0,0,0,.6);
+.side-bar-button-active {
+    background-color: rgba(0,0,0,.6);
 }
 
 .loader {
