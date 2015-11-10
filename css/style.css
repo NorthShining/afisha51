@@ -160,26 +160,69 @@ body {
 
 .header-nav-menu-button-wrapper {
     height: 20px;
-    padding: 17px 0 0 0;
+    padding: 18px 0 0 0;
 }
 
 .header-nav-menu-button {
-    width: 20px;
+    width: 22px;
     margin: auto;
+    z-index: 200;
 }
 
 .header-nav-menu-button-icon {
-    height: 4px;
+    height: 3px;
     background-color: #fff;
     border-radius: 1px;
 }
 
 .header-nav-menu-button-icon:nth-child(2) {
-    margin-top: 4px;
+    margin-top: 5px;
 }
 
 .header-nav-menu-button-icon:nth-child(3) {
-    margin-top: 4px;
+    margin-top: 5px;
+}
+
+.header-nav-back-button {
+    width: 22px;
+    margin: auto;
+    margin-top: -19px;
+    z-index: 300;
+}
+
+.header-nav-back-button-icon {
+    height: 10px;
+    width: 5px;
+    background-color: darkcyan;
+    border-radius: 1px;
+}
+
+.header-nav-back-button-icon:first-child {
+    margin-left: 5px;
+    border-bottom-left-radius: 2px; 
+    -moz-transform: skewX(-45deg); 
+    -ms-transform: skewX(-45deg); 
+    -webkit-transform: skewX(-45deg); 
+    -o-transform: skewX(-45deg); 
+    transform: skewX(-45deg);
+}
+
+.header-nav-back-button-icon:nth-child(2) {
+    margin-top: -1px;
+    margin-left: 5px;
+    border-top-left-radius: 2px;
+    -moz-transform: skewX(45deg); 
+    -ms-transform: skewX(45deg); 
+    -webkit-transform: skewX(45deg); 
+    -o-transform: skewX(45deg); 
+    transform: skewX(45deg);
+}
+
+.header-nav-back-button-icon:nth-child(3) {
+    height: 3px;
+    width: 18px;
+    margin: auto;
+    margin-top: -11px;
 }
 
 .header-nav-divider {
@@ -277,24 +320,13 @@ a {
     width: 100%;
     z-index: 200;
     overflow-y: auto;
-    background-color: #F0F0F0;
+    background-color: #fff;
 }
 
 .nav-popup-menu-button {
     width: 100%;
     padding: 5px 0 5px;
     text-align: center;
-}
-
-.popup-back {
-    height: 55px;
-    background-color: #464646;
-    text-align: center;
-    top: 0;
-    right: 0;
-    position: fixed;
-    color: #fff;
-    z-index: 300;
 }
 
 .filmIndexTable {
@@ -334,6 +366,10 @@ td {
     padding: 10px;
 }
 
+.filmDateTableFilmName {
+    padding-left: 14px;
+}
+
 .filmDateTableFilmTimetable {
     width: 100%;
 }
@@ -352,4 +388,21 @@ td {
 
 .is3d {
     color: red;
+}
+
+#filmline-center {
+    padding: 0;
+}
+
+.filmSingle {
+    padding: 10px;
+    background-color: #eaeaea;
+}
+
+.filmSingleInfoTableHeader {
+    width: 100px;
+}
+
+.robots-text {
+    padding-top: 10px;
 }
