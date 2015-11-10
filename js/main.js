@@ -30,6 +30,7 @@ var getFilmsList = function(day, that) {
     }
     closeSidebar();
     closeNavPopupMenu();
+    closeFilmPopup();
     $(".side-bar-button-active").removeClass("side-bar-button-active");
     that.find(".sidebar-nav-button").addClass("side-bar-button-active");
     openPreloader(function() {
@@ -123,6 +124,9 @@ var pageClear = function() {
         var cinemaTimeLink = "http://vmurmanske.ru" + jQuery(this).attr("href");
         jQuery(this).attr("href", cinemaTimeLink);
     });
+    $(".filmDateTableFilmImage").detach();
+	$(".filmIndex-filmImageWrapper1").detach();
+    $(".filmCinema").removeAttr("href");
 };
 //--------------------------------------------------------------------------------------------
 
@@ -177,9 +181,8 @@ var openFilmPopup = function(link) {
                 $("body").attr("style", "overflow:hidden;");
                 $("#info_pics").detach();
                 mainApp.previousName = $(".header-nav-name").html();
-                $(".header-nav-name").html($(".filmSingle").html());
+                $(".header-nav-name").html("О фильме");
                 $(".film-popup p:first").detach();
-                $(".filmSingle").detach();
                 $(".filmOptions").detach();
                 $(".film-popup").fadeIn(100);
                 $(".popup-back").fadeIn(100);

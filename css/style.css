@@ -185,7 +185,7 @@ body {
 .header-nav-divider {
     height: 100%;
     width: 1px;
-    background-color: #a0a0a0;
+    background-color: #cccccc;
     display: inline-block;
 }
 
@@ -202,15 +202,7 @@ body {
 }
 
 #content {
-    margin-top: 5%;
-}
-
-tr {
-    border-top: 1px solid #eaeaea;
-}
-
-tr:last-child {
-    border-bottom: 1px solid #eaeaea;
+    margin-top: 24px;
 }
 
 .filmDateTableFilmTimetableItem {
@@ -303,4 +295,61 @@ a {
     position: fixed;
     color: #fff;
     z-index: 300;
+}
+
+.filmIndexTable {
+    padding-top: 30px;
+}
+
+.filmIndexTableCinemaName {
+    background-color: #eaeaea;
+}
+
+.filmIndexTableHallName {
+    color: #a0a0a0;
+}
+
+.filmIndexTable-filmName span {
+    color: #000;
+}
+
+.filmDateTableCinemaName {
+    padding: 30px 0 0 0;
+}
+
+.filmDateTableCinemaName div {
+    height: 30px;
+    background-color: #eaeaea;
+    line-height: 20px;
+    padding-top: 10px;
+    padding-left: 15px;
+}
+
+.filmDateTableHallName {
+    color: #a0a0a0;
+}
+
+td {
+    border-bottom: 1px solid #eaeaea;
+    padding: 10px;
+}
+
+.filmDateTableFilmTimetable {
+    width: 100%;
+}
+
+.filmDateTableFilmTimetableItem {
+    padding-right: 10px;
+}
+
+.filmShowStatus {
+    color: #000;
+}
+
+.film-price {
+    color: green;
+}
+
+.is3d {
+    color: red;
 }
