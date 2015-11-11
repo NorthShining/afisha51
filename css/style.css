@@ -277,8 +277,28 @@ width: 100%;
 width: 58px;
 }
 
-.side-bar-button-active {
-background-color: rgba(0,0,0,.6);
+.side-bar-button-active #now-icon {
+background: url(../img/watch2.png) no-repeat left center;
+background-size: contain;
+color: #f89203;
+}
+
+.side-bar-button-active #today-icon {
+background: url(../img/calendar-day2.png) no-repeat left center;
+background-size: contain;
+color: #f89203;
+}
+
+.side-bar-button-active #tomorrow-icon {
+background: url(../img/calendar-day3.png) no-repeat left center;
+background-size: contain;
+color: #464646;
+}
+
+.side-bar-button-active #choose-date {
+background: url(../img/calendar-month3.png) no-repeat left center;
+background-size: contain;
+color: #464646;
 }
 
 .loader {
