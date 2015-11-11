@@ -121,7 +121,7 @@ padding: 0 0 0 50px;
 }
 
 #now-icon {
-background: url(../img/clock.png) no-repeat left center;
+background: url(../img/watch.png) no-repeat left center;
 background-size: contain; 
 }
 
@@ -290,15 +290,23 @@ color: #f89203;
 }
 
 .side-bar-button-active #tomorrow-icon {
-background: url(../img/calendar-day3.png) no-repeat left center;
+background: url(../img/calendar-day2.png) no-repeat left center;
 background-size: contain;
-color: #464646;
+color: #f89203;
 }
 
 .side-bar-button-active #choose-date {
-background: url(../img/calendar-month3.png) no-repeat left center;
+background: url(../img/calendar-month2.png) no-repeat left center;
 background-size: contain;
-color: #464646;
+color: #f89203;
+}
+
+.side-bar-button-active #today-date-position {
+color: #f89203;
+}
+
+.side-bar-button-active #tomorrow-date-position {
+color: #f89203;
 }
 
 .loader {
